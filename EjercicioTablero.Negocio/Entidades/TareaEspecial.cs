@@ -22,5 +22,20 @@ namespace EjercicioTablero.Negocio.Entidades
             _dificultad = dificultad;
             _prioridad = prioridad;
         }
+
+        //public override bool IsFinalizada()
+        //{
+        //    return true;
+        //}
+
+        public override bool Validar()
+        {
+            return _porcentajeFinalizacion > 50;
+        }
+
+        public override string ToString()
+        {
+            return $"Esta tarea #{this.Codigo.ToString()} es {this._descripcion} con dificultad {this._dificultad.ToString()} ";
+        }
     }
 }

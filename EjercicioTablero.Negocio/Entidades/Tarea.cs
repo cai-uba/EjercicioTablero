@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EjercicioTablero.Negocio.Entidades
 {
-    public abstract class Tarea
+    public abstract class Tarea : Object
     {
         protected int _codigo;
         protected string _descripcion;
@@ -26,9 +26,34 @@ namespace EjercicioTablero.Negocio.Entidades
             FechaAlta = DateTime.Now;
         }
 
-        protected bool IsFinalizada()
+        public  bool IsFinalizada()
         {
+            if (!Validar())
+                _estado = "Error en validación";
+         //       throw new Exception("ya sé que no está finaliza.");
+
             return (Estado == "Finalizada");
+        }
+
+        public abstract bool Validar();
+
+        public override string ToString()
+        {
+            return $"Esta tarea #{this.Codigo.ToString()} es {this._descripcion} con estado {this._estado} ";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Tarea))
+                return false;
+
+            Tarea tObj = (Tarea)obj;
+
+            if (tObj.Codigo != this._codigo)
+                return false;
+
+
+            return true;
         }
     }
 }

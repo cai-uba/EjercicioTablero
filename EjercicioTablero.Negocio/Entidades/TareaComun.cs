@@ -18,5 +18,10 @@ namespace EjercicioTablero.Negocio.Entidades
         {
             Orden = orden;
         }
+
+        public override bool Validar()
+        {
+            return _fechaRealizacion.Year > 2022;
+        }
     }
 }

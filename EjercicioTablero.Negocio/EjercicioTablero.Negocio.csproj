@@ -45,6 +45,7 @@
     <Compile Include="Entidades\Tarea.cs" />
     <Compile Include="Entidades\TareaComun.cs" />
     <Compile Include="Entidades\TareaEspecial.cs" />
+    <Compile Include="Entidades\TareaEspecialMultiple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
